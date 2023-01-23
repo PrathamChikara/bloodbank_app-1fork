@@ -1,33 +1,34 @@
-// import 'package:bloodbank_app/constants/onboarding_data.dart';
-// import 'package:flutter/material.dart';
+import 'package:bloodbank_app/constants/onboarding_data.dart';
+import 'package:flutter/material.dart';
+import '../widgets/onboarding_widget.dart';
 
-// class MyOnboardingPage extends StatelessWidget {
-//   const MyOnboardingPage({super.key});
+class MyOnboardingPage extends StatelessWidget {
+  const MyOnboardingPage({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: SafeArea(
-//         child: Container(
-//           color: Colors.red,
-//           width: double.infinity,
-//           child: SingleChildScrollView(
-//             child: Column(
-//               mainAxisAlignment: MainAxisAlignment.center,
-//               children: onboardingData
-//                   .map(
-//                     (singleOnboardingScreen) => onboardingWidget(
-//                       imageUrl: singleOnboardingScreen["image_url"]!,
-//                       text: singleOnboardingScreen["text"]!,
-//                     ),
-//                   )
-//                   .toList(),
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          color: Colors.red,
+          width: double.infinity,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: onboardingData
+                  .map(
+                    (singleOnboardingScreen) => onboardingWidget(
+                      imageUrl: singleOnboardingScreen["image_url"]!,
+                      text: singleOnboardingScreen["text"]!,
+                    ),
+                  )
+                  .toList(),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 
   Widget _onboardingWidget(
       {required String imageUrl, String text = "", int? index}) {
