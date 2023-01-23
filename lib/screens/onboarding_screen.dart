@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:bloodbank_app/constants/onboarding_data.dart';
 import 'package:flutter/material.dart';
 
@@ -31,29 +33,32 @@ class MyOnboardingPage extends StatelessWidget {
 
   Widget onboardingWidget(
       {required String imageUrl, String text = "", int? index}) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Container(
-          child: Image.asset(
-            imageUrl,
-          ),
-        ),
-        Container(
-          padding: EdgeInsets.only(
-            left: 57.0,
-            right: 56.0,
-          ),
-          child: Text(
-            text,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 18,
-              color: Colors.white,
+    return Container(
+      height: 800,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            child: Image.asset(
+              imageUrl,
             ),
           ),
-        )
-      ],
+          Container(
+            padding: EdgeInsets.only(
+              left: 57.0,
+              right: 56.0,
+            ),
+            child: Text(
+              text,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.white,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
