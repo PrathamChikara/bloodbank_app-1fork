@@ -81,6 +81,15 @@ class PhoneNumberScreen extends StatelessWidget {
                   "Login's",
                 ),
               ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.greenAccent,
+                ),
+                onPressed: () => {},
+                child: Text(
+                  "Login's",
+                ),
+              ),
               // Container(
               //   height: 53,
               //   width: 263,
