@@ -9,6 +9,19 @@ class PhoneNumberScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton.extended(
+        icon: Icon(Icons.remove),
+        label: Text('Hello'),
+
+        onPressed: () => null,
+        // child: Column(
+        //   children: [
+        //     Icon(Icons.remove),
+        //     Icon(Icons.remove),
+        //     Icon(Icons.remove),
+        //   ],
+        // ),
+      ),
       body: SafeArea(
         child: SizedBox(
           width: double.infinity,
@@ -35,6 +48,7 @@ class PhoneNumberScreen extends StatelessWidget {
               const SizedBox(
                 height: 67,
               ),
+<<<<<<< HEAD
               ElevatedButton(
               onPressed:() => {}, 
               child: Text("Login")
@@ -42,6 +56,48 @@ class PhoneNumberScreen extends StatelessWidget {
                 
               
               
+=======
+              TextButton(
+                onPressed: () => {},
+                child: Text(
+                  "Login's",
+                ),
+              ),
+              // coming from global theme
+              ElevatedButton(
+                onPressed: () => {},
+                child: Text(
+                  "Login's",
+                ),
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                    Colors.yellow,
+                  ),
+                ),
+                onPressed: () => {},
+                child: Text(
+                  "Login's",
+                ),
+              ),
+              // Container(
+              //   height: 53,
+              //   width: 263,
+              //   decoration: BoxDecoration(
+              //     color: MyColors.redPrimary,
+              //     borderRadius: BorderRadius.circular(4),
+              //   ),
+              //   child: Center(
+              //     child: Text(
+              //       "Login",
+              //       style: TextStyle(
+              //         color: Colors.white,
+              //       ),
+              //     ),
+              //   ),
+              // )
+>>>>>>> 58b20067e9675aa58d7390aa637208d7423fdb5a
             ],
           ),
         ),
