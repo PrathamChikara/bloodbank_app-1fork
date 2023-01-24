@@ -7,26 +7,6 @@ class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
-  State<MySplashScreen> createState() => _MySplashScreenState();
-}
-
-class _MySplashScreenState extends State<MySplashScreen> {
-  @override
-  initState() {
-    // Future.delayed(
-    //   Duration(
-    //     seconds: 3,
-    //   ),
-    //   () =>
-    // Navigator.push(
-    //   context,
-    //   MaterialPageRoute(builder: (context) => MyOnboardingPage()),
-    // );
-    // );
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
