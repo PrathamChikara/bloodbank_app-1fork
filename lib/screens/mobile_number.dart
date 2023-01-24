@@ -35,22 +35,13 @@ class PhoneNumberScreen extends StatelessWidget {
               const SizedBox(
                 height: 67,
               ),
-              Container(
-                height: 53,
-                width: 263,
-                decoration: BoxDecoration(
-                  color: MyColors.redPrimary,
-                  borderRadius: BorderRadius.circular(4),
-                ),
-                child: const Center(
-                  child: Text(
-                    "Login",
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              )
+              ElevatedButton(
+              onPressed:() => {}, 
+              child: Text("Login")
+              ),
+                
+              
+              
             ],
           ),
         ),
