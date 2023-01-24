@@ -1,0 +1,18 @@
+import 'package:flutter/material.dart';
+void main() {
+  var now = DateTime.now();
+  // var jan = DateTime(2000);
+  DateTime jan = DateTime(2002, 1, 24);
+  DateTime janUtc = DateTime.utc(2002, 1, 24);
+  DateTime someDate = DateTime.parse('2002-01-24 00:00:00.000Z');
+  // calculate date of birth
+  calculateAge(1993,3,3);
+  // print(someDate);
+}
+
+void calculateAge(int year, int month,int date) {
+  DateTime startDate = DateTime(year,month,date);
+  DateTime now = DateTime.now();
+  // var difference = now.difference(startDate);
+  // print(difference.inDays/365);
+}
