@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(
-                Colors.amber,
+                Colors.pink,
               ),
               padding: MaterialStateProperty.all(
                   EdgeInsets.symmetric(horizontal: 20)),
