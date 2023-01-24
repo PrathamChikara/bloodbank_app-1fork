@@ -48,15 +48,6 @@ class PhoneNumberScreen extends StatelessWidget {
               const SizedBox(
                 height: 67,
               ),
-<<<<<<< HEAD
-              ElevatedButton(
-              onPressed:() => {}, 
-              child: Text("Login")
-              ),
-                
-              
-              
-=======
               TextButton(
                 onPressed: () => {},
                 child: Text(
@@ -106,7 +97,6 @@ class PhoneNumberScreen extends StatelessWidget {
               //     ),
               //   ),
               // )
->>>>>>> 58b20067e9675aa58d7390aa637208d7423fdb5a
             ],
           ),
         ),

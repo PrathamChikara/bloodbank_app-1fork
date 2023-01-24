@@ -1,14 +1,6 @@
 import 'package:bloodbank_app/screens/mobile_number.dart';
-<<<<<<< HEAD
-import 'package:bloodbank_app/screens/onboarding/onboarding0.dart';
 import 'package:bloodbank_app/screens/onboarding/onboarding1.dart';
 import 'package:bloodbank_app/screens/onboarding/onboarding2.dart';
-import 'package:bloodbank_app/screens/onboarding_screen.dart';
-import 'package:bloodbank_app/screens/splash_screen.dart';
-=======
-import 'package:bloodbank_app/screens/onboarding/onboarding1.dart';
-import 'package:bloodbank_app/screens/onboarding/onboarding2.dart';
->>>>>>> 58b20067e9675aa58d7390aa637208d7423fdb5a
 import 'package:flutter/material.dart';
 import 'screens/splash_screen.dart';
 
@@ -22,26 +14,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-<<<<<<< HEAD
-      title: "Blood Bank",
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-        elevatedButtonTheme: ElevatedButtonTheme(data:,
-          style:ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(Colors.yellow),
-          ),
-        ),
-
-
-      ),
-      // home: MySplashScreen(),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => MySplashScreen(),
-        '/onboarding': (context) => OnboardingScreen(),
-        '/onboarding1': (context) => OnboardingScreen1(),
-        '/onboarding2': (context) => OnboardingScreen2(),
-=======
       title: 'Bllood Bank App',
       theme: ThemeData(
           // color shades
@@ -74,7 +46,6 @@ class MyApp extends StatelessWidget {
         "/": (context) => SplashScreen(),
         '/onboarding': (context) => OnboardingPage1(),
         '/onboarding2': (context) => OnboardingPage2(),
->>>>>>> 58b20067e9675aa58d7390aa637208d7423fdb5a
       },
     );
   }
