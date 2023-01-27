@@ -53,13 +53,33 @@ class MobileNumber extends StatelessWidget {
                               20,
                             ),
                           )),
-                      child: Text(
-                        "+91",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: MyColors.redPrimary,
-                        ),
+                      child:Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(
+                            "+91",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: MyColors.redPrimary,
+                            ),
+                            
+                          ),
+                          Container(
+                            width:95,
+                            child:TextField(
+                              decoration: InputDecoration(
+                                
+                              ),
+                            ),
+                          ),
+                         
+                          
+                        ],
                       ),
+                      
+            
+
+
                     ),
                   ],
                 ),
@@ -69,55 +89,27 @@ class MobileNumber extends StatelessWidget {
               SizedBox(
                 height: 67,
               ),
-              TextButton(
-                onPressed: () => {},
-                child: Text(
-                  "Login's",
+             
+              InkWell(
+                onTap: (() => {}
                 ),
-              ),
-              // coming from global theme
-              ElevatedButton(
-                onPressed: () => {},
-                child: Text(
-                  "Login's",
-                ),
-              ),
-              ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                    Colors.yellow,
+                child: Container(
+                  height: 53,
+                  width: 263,
+                  decoration: BoxDecoration(
+                    color: MyColors.redPrimary,
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Login",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
-                onPressed: () => {},
-                child: Text(
-                  "Login's",
-                ),
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.greenAccent,
-                ),
-                onPressed: () => {},
-                child: Text(
-                  "Login's",
-                ),
-              ),
-              // Container(
-              //   height: 53,
-              //   width: 263,
-              //   decoration: BoxDecoration(
-              //     color: MyColors.redPrimary,
-              //     borderRadius: BorderRadius.circular(4),
-              //   ),
-              //   child: Center(
-              //     child: Text(
-              //       "Login",
-              //       style: TextStyle(
-              //         color: Colors.white,
-              //       ),
-              //     ),
-              //   ),
-              // )
+              )
             ],
           ),
         ),
