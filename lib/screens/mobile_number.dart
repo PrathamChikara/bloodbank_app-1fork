@@ -1,13 +1,20 @@
-import 'dart:ui';
+// ignore_for_file: avoid_unnecessary_containers, duplicate_ignore, sized_box_for_whitespace
+
+import 'dart:developer';
 
 import 'package:bloodbank_app/constants/colors.dart';
+import 'package:bloodbank_app/constants/routes.dart';
 import 'package:flutter/material.dart';
 
-class MobileNumber extends StatelessWidget {
-  const MobileNumber({super.key});
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController _phoneNumberController = TextEditingController();
+    log("---------------------------------------------");
+    log("---------mobile_number.dart------------");
+    log("---------------------------------------------");
     return Scaffold(
       floatingActionButton: FloatingActionButton.extended(
         icon: Icon(Icons.remove),
@@ -30,86 +37,106 @@ class MobileNumber extends StatelessWidget {
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               //the enter number field
+              // ignore: avoid_unnecessary_containers
               Container(
                 child: Column(
                   children: [
                     Container(
-                      child: Text(
+                      child: const Text(
                         "Enter your mobile number",
                       ),
                     ),
                     Container(
-                      width: 265,
+                      // width: 365,
+                      // 48 as padding on both sides and 265 to be width
+                      // so the percentage is ~73%
+                      width: MediaQuery.of(context).size.width * 0.73,
                       margin: EdgeInsets.only(
                         top: 15,
                       ),
-                      padding: EdgeInsets.fromLTRB(60, 14, 60, 17),
+                      padding:
+                          const EdgeInsets.only(left: 40, top: 14, bottom: 17),
                       decoration: BoxDecoration(
                           border: Border.all(
                             width: 0.8,
                           ),
-                          borderRadius: BorderRadius.all(
+                          borderRadius: const BorderRadius.all(
                             Radius.circular(
                               20,
                             ),
                           )),
-                      child:Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      child: Row(
                         children: [
-                          Text(
-                            "+91",
-                            style: TextStyle(
-                              fontSize: 18,
-                              color: MyColors.redPrimary,
-                            ),
-                            
-                          ),
-                          Container(
-                            width:95,
-                            child:TextField(
-                              decoration: InputDecoration(
-                                
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                "+91",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: MyColors.redPrimary,
+                                ),
                               ),
-                            ),
-                          ),
-                         
-                          
+                              SizedBox(
+                                width: 18,
+                              ),
+                              SizedBox(
+                                width: 180,
+                                child: TextField(
+                                  // validator: (value) => ,
+                                  // onChanged: (value) =>
+                                  //     {_phoneNumberController.text = value},
+                                  controller: _phoneNumberController,
+
+                                  decoration: InputDecoration(
+                                    // prefix: Text(
+                                    //   '+91',
+                                    //   style: TextStyle(
+                                    //     fontSize: 20,
+                                    //     color: MyColors.redPrimary,
+                                    //   ),
+                                    // ),
+                                    border: InputBorder.none,
+                                    //
+                                    hintText: 'Enter you number here',
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
                         ],
                       ),
-                      
-            
-
-
                     ),
                   ],
                 ),
               ),
 
               // add some spacing
-              SizedBox(
+              const SizedBox(
                 height: 67,
               ),
-             
-              InkWell(
-                onTap: (() => {}
-                ),
-                child: Container(
-                  height: 53,
-                  width: 263,
-                  decoration: BoxDecoration(
-                    color: MyColors.redPrimary,
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Login",
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              )
+              ElevatedButton(
+                onPressed: () => {},
+                child: Text("Login"),
+              ),
+
+              // Container(
+              //   height: 53,
+              //   width: 263,
+              //   decoration: BoxDecoration(
+              //     color: MyColors.redPrimary,
+              //     borderRadius: BorderRadius.circular(4),
+              //   ),
+              //   child: Center(
+              //     child: Text(
+              //       "Login",
+              //       style: TextStyle(
+              //         color: Colors.white,
+              //       ),
+              //     ),
+              //   ),
+              // )
             ],
           ),
         ),
