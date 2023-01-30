@@ -126,6 +126,13 @@ class LoginScreen extends StatelessWidget {
                     {Navigator.pushNamed(context, Routes.signUpScreen)},
                 child: const Text("sign up"),
               ),
+
+              TextButton(
+                  onPressed: () => {
+                        Navigator.pushNamed(context, Routes.signUpScreen),
+                      },
+                  child: Text("Sign UP")),
+
               // Container(
               //   height: 53,
               //   width: 263,
