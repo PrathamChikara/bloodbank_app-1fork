@@ -20,6 +20,7 @@ import 'firebase_options.dart';
 import 'screens/splash_screen.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
           // buttonTheme:
           ),
       // home: SplashScreen(),
-      initialRoute: Routes.home,
+      initialRoute: Routes.loginScreen,
       routes: {
         Routes.splashScreen: (context) => SplashScreen(),
         Routes.onboardingScreen: (context) => OnboardingPage(),

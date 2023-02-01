@@ -4,17 +4,31 @@ import 'dart:developer';
 
 import 'package:bloodbank_app/constants/colors.dart';
 import 'package:bloodbank_app/constants/routes.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     TextEditingController _phoneNumberController = TextEditingController();
     log("---------------------------------------------");
     log("---------mobile_number.dart------------");
     log("---------------------------------------------");
+
+    Future<void> _signUp() async {
+      if (_phoneNumberController.text.isNotEmpty) {
+        print("Your phone number is ${_phoneNumberController.text}");
+        // Navigator.pushNamed(context, Routes.otpScreen);
+      }
+    }
+
     return Scaffold(
       floatingActionButton: FloatingActionButton.extended(
         icon: Icon(Icons.remove),
@@ -117,14 +131,16 @@ class LoginScreen extends StatelessWidget {
                 height: 67,
               ),
               ElevatedButton(
-                onPressed: () => {},
-                child: Text("Login"),
-              ),
-
-              TextButton(
-                onPressed: () =>
-                    {Navigator.pushNamed(context, Routes.signUpScreen)},
-                child: const Text("sign up"),
+                style: ButtonStyle(
+                  fixedSize: MaterialStateProperty.all(
+                    Size(
+                      MediaQuery.of(context).size.width * 0.73,
+                      53,
+                    ),
+                  ),
+                ),
+                onPressed: _signUp,
+                child: const Text("Login"),
               ),
 
               TextButton(
