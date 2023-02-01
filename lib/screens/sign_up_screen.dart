@@ -49,7 +49,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: Form(
               key: _formKey,
               child: Column(
-
                 children: [
                   textFieldWithLabel(
                     "Your Name",
@@ -79,9 +78,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       if (_formKey.currentState!.validate()) {
                         print("Valid");
                         _formKey.currentState!.save();
-
                         // prefs.setString(key, value)
-
                         Navigator.pushNamed(context, Routes.home);
                       }
                     },
@@ -123,7 +120,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     )
                   : prefs.setString(userDataFieldKey, ""),
               print(userDataFieldKey),
-
             },
             validator: (value) {
               if (value == null || value.isEmpty) {
