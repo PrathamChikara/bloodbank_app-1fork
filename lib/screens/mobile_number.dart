@@ -40,19 +40,19 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton.extended(
-        icon: Icon(Icons.remove),
-        label: Text('Hello'),
+      // floatingActionButton: FloatingActionButton.extended(
+      //   icon: Icon(Icons.remove),
+      //   label: Text('Hello'),
 
-        onPressed: () => null,
-        // child: Column(
-        //   children: [
-        //     Icon(Icons.remove),
-        //     Icon(Icons.remove),
-        //     Icon(Icons.remove),
-        //   ],
-        // ),
-      ),
+      //   onPressed: () => null,
+      //   // child: Column(
+      //   //   children: [
+      //   //     Icon(Icons.remove),
+      //   //     Icon(Icons.remove),
+      //   //     Icon(Icons.remove),
+      //   //   ],
+      //   // ),
+      // ),
       body: SafeArea(
         child: Container(
           width: double.infinity,
