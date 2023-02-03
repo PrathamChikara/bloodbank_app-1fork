@@ -3,6 +3,7 @@ import 'package:bloodbank_app/constants/routes.dart';
 import 'package:bloodbank_app/screens/all_messages.dart';
 import 'package:bloodbank_app/screens/donors_map.dart';
 import 'package:bloodbank_app/screens/find_donors.dart';
+import 'package:bloodbank_app/screens/football_scores.dart';
 import 'package:bloodbank_app/screens/history.dart';
 import 'package:bloodbank_app/screens/home.dart';
 import 'package:bloodbank_app/screens/incoming_requests.dart';
@@ -71,6 +72,7 @@ class MyApp extends StatelessWidget {
         Routes.allMessages: (context) => AllMessages(),
         Routes.donorsMap: (context) => DonorsMap(),
         Routes.messages: (context) => Messages(),
+        Routes.footballScreen: (context) => FootBallScoresScreen(),
       },
     );
   }
