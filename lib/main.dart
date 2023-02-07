@@ -15,6 +15,7 @@ import 'package:bloodbank_app/screens/onboarding/onboarding2.dart';
 import 'package:bloodbank_app/screens/otp_screen.dart';
 import 'package:bloodbank_app/screens/sign_up_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +33,16 @@ Future<void> main() async {
   // if (shouldUseFirestoreEmulator) {
   //   FirebaseFirestore.instance.useFirestoreEmulator('localhost', 8080);
   // }
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      tools: [
+        ...DevicePreview.defaultTools,
+        // const CustomPlugin(),
+      ],
+      builder: (context) => const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -46,6 +56,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.red,
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ButtonStyle(
+              fixedSize: MaterialStateProperty.all(Size(double.infinity, 53)),
               // backgroundColor: MaterialStatePropertyAll(Color(0xA8FF0E0E))))
               backgroundColor: MaterialStateColor.resolveWith(
                 // ((states) => Color.fromARGB(168.3, 255, 14, 14)),
@@ -57,7 +68,7 @@ class MyApp extends StatelessWidget {
           // buttonTheme:
           ),
       // home: SplashScreen(),
-      initialRoute: Routes.home,
+      initialRoute: Routes.loginScreen,
       routes: {
         "/splash": (context) => SplashScreen(),
         Routes.onboardingScreen: (context) => OnboardingPage(),
