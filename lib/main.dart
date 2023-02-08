@@ -1,4 +1,6 @@
 // ignore_for_file: unused_import, prefer_const_constructors
+
+import 'package:bloodbank_app/constants/colors.dart';
 import 'package:bloodbank_app/constants/routes.dart';
 import 'package:bloodbank_app/screens/all_messages.dart';
 import 'package:bloodbank_app/screens/donors_map.dart';
@@ -7,6 +9,7 @@ import 'package:bloodbank_app/screens/football_scores.dart';
 import 'package:bloodbank_app/screens/history.dart';
 import 'package:bloodbank_app/screens/home.dart';
 import 'package:bloodbank_app/screens/incoming_requests.dart';
+import 'package:bloodbank_app/screens/loading.dart';
 import 'package:bloodbank_app/screens/messages.dart';
 import 'package:bloodbank_app/screens/mobile_number.dart';
 import 'package:bloodbank_app/screens/onboarding/onboarding0.dart';
@@ -53,6 +56,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Blood Bank App',
       theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          color: MyColors.redPrimary,
+          elevation: 0,
+        ),
         primarySwatch: Colors.red,
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
@@ -85,7 +92,7 @@ class MyApp extends StatelessWidget {
         // buttonTheme:
       ),
       // home: SplashScreen(),
-      initialRoute: Routes.splashScreen,
+      initialRoute: Routes.home,
       routes: {
         "/splash": (context) => SplashScreen(),
         Routes.onboardingScreen: (context) => OnboardingPage(),
@@ -102,6 +109,7 @@ class MyApp extends StatelessWidget {
         Routes.donorsMap: (context) => DonorsMap(),
         Routes.messages: (context) => Messages(),
         Routes.footballScores: (context) => FootballScores(),
+        Routes.loading: (context) => LoadingScreen(),
       },
     );
   }
