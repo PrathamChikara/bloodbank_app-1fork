@@ -1,3 +1,7 @@
+import 'package:bloodbank_app/constants/button_theme.dart';
+import 'package:bloodbank_app/constants/colors.dart';
+import 'package:bloodbank_app/widgets/my_button.dart';
+import 'package:bloodbank_app/widgets/title_widgets.dart';
 import 'package:flutter/material.dart';
 
 class IncomingRequests extends StatelessWidget {
@@ -13,25 +17,37 @@ class IncomingRequests extends StatelessWidget {
               (e) => Column(
                 children: [
                   Container(
+                    padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
-                              child: Text(e),
+                              child: MyTitleWidgets.titleWidget(
+                                e,
+                                fontSize: 18,
+                              ),
                             ),
-                            Container(
-                              child: Text("View Details"),
-                            )
+                            MyTitleWidgets.titleWidget(
+                              e,
+                              color: MyColors.redPrimary,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ],
                         ),
                         Column(
                           children: [
-                            // borderedButton(),
-                            Container(
-                              child: Text("Decline"),
-                            )
+                            ButtonThemes.redRoundedButton(
+                              "Accept",
+                              null,
+                            ),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            ButtonThemes.transparentRoundedButton(
+                                "Delete", null),
                           ],
                         ),
                       ],
@@ -43,12 +59,6 @@ class IncomingRequests extends StatelessWidget {
             )
             .toList(),
       ),
-    );
-  }
-
-  Container borderedButton(double height, double width, Color color) {
-    return Container(
-      child: Text("Accept"),
     );
   }
 }

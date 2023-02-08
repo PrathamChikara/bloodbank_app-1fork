@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../constants/button_theme.dart';
+import '../constants/colors.dart';
+import '../widgets/title_widgets.dart';
+
 class History extends StatelessWidget {
   const History({super.key});
 
@@ -17,32 +21,49 @@ class History extends StatelessWidget {
           Expanded(
             child: SingleChildScrollView(
               child: Column(
-                children: ["Requester #3982", "Requester #893"]
+                children: ["Date 11/10/12", "Date 11/10/12"]
                     .map(
                       (e) => Column(
                         children: [
                           Container(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 4,
+                              horizontal: 8,
+                            ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Container(
-                                      child: Text(e),
+                                      child: MyTitleWidgets.titleWidget(
+                                        e,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                      ),
                                     ),
-                                    Container(
-                                      child: Text("View Details"),
-                                    )
+                                    MyTitleWidgets.titleWidget(
+                                      e,
+                                      color: MyColors.redPrimary,
+                                      fontWeight: FontWeight.w400,
+                                    ),
                                   ],
                                 ),
                                 Column(
                                   children: [
                                     Container(
-                                      child: Text("Accept"),
+                                      child: MyTitleWidgets.titleWidget(
+                                        e,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                      ),
                                     ),
-                                    Container(
-                                      child: Text("Decline"),
-                                    )
+                                    MyTitleWidgets.titleWidget(
+                                      e,
+                                      color: MyColors.redPrimary,
+                                      fontWeight: FontWeight.w400,
+                                    ),
                                   ],
                                 ),
                               ],
