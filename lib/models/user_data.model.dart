@@ -6,24 +6,24 @@ import 'dart:convert';
 
 class UserData {
   UserData({
-    this.fullName,
-    this.dateOfBirth,
-    this.age,
-    this.prevailingHealthConditions,
-    this.bloodGroup,
+    this.fullName = "",
+    this.dateOfBirth = "",
+    this.age = "",
+    this.prevailingHealthConditions = "",
+    this.bloodGroup = "",
   });
 
   String? fullName;
   String? dateOfBirth;
   String? age;
-  PrevailingHealthConditions? prevailingHealthConditions;
+  String? prevailingHealthConditions;
   String? bloodGroup;
 
   UserData copyWith({
     String? fullName,
     String? dateOfBirth,
     String? age,
-    PrevailingHealthConditions? prevailingHealthConditions,
+    String? prevailingHealthConditions,
     String? bloodGroup,
   }) =>
       UserData(
@@ -57,9 +57,9 @@ class UserData {
       };
 }
 
-enum PrevailingHealthConditions {
-  diabetes,
-  hypertension,
-  heartDisease,
-  none,
-}
+// enum String {
+//   diabetes,
+//   hypertension,
+//   heartDisease,
+//   none,
+// }

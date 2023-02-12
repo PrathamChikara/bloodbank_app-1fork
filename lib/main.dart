@@ -2,6 +2,7 @@
 
 import 'package:bloodbank_app/constants/colors.dart';
 import 'package:bloodbank_app/constants/routes.dart';
+import 'package:bloodbank_app/providers/user_provider.dart';
 import 'package:bloodbank_app/screens/all_messages.dart';
 import 'package:bloodbank_app/screens/donors_map.dart';
 import 'package:bloodbank_app/screens/find_donors.dart';
@@ -10,6 +11,7 @@ import 'package:bloodbank_app/screens/history.dart';
 import 'package:bloodbank_app/screens/home.dart';
 import 'package:bloodbank_app/screens/incoming_requests.dart';
 import 'package:bloodbank_app/screens/loading.dart';
+import 'package:bloodbank_app/screens/map_sample.dart';
 import 'package:bloodbank_app/screens/messages.dart';
 import 'package:bloodbank_app/screens/mobile_number.dart';
 import 'package:bloodbank_app/screens/onboarding/onboarding0.dart';
@@ -21,6 +23,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'firebase_options.dart';
 import 'screens/splash_screen.dart';
@@ -37,13 +40,16 @@ Future<void> main() async {
   //   FirebaseFirestore.instance.useFirestoreEmulator('localhost', 8080);
   // }
   runApp(
-    DevicePreview(
-      enabled: true,
-      tools: [
-        ...DevicePreview.defaultTools,
-        // const CustomPlugin(),
-      ],
-      builder: (context) => const MyApp(),
+    ChangeNotifierProvider(
+      create: (context) => UserProvider(),
+      child: DevicePreview(
+        enabled: true,
+        tools: [
+          ...DevicePreview.defaultTools,
+          // const CustomPlugin(),
+        ],
+        builder: (context) => const MyApp(),
+      ),
     ),
   );
 }
@@ -92,7 +98,7 @@ class MyApp extends StatelessWidget {
         // buttonTheme:
       ),
       // home: SplashScreen(),
-      initialRoute: Routes.home,
+      initialRoute: Routes.loginScreen,
       routes: {
         "/splash": (context) => SplashScreen(),
         Routes.onboardingScreen: (context) => OnboardingPage(),
@@ -110,6 +116,7 @@ class MyApp extends StatelessWidget {
         Routes.messages: (context) => Messages(),
         Routes.footballScores: (context) => FootballScores(),
         Routes.loading: (context) => LoadingScreen(),
+        Routes.mapPage: (context) => MapSample(),
       },
     );
   }
